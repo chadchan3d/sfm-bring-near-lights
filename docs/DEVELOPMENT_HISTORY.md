@@ -15,7 +15,7 @@ Git history begins truthfully at:
 
 ```text
 ece86506001ed05d54cbacb14e57a4f8bf7d90f9
-````
+```
 
 That commit imports the surviving v1.0.2 release payload. No retrospective commits were manufactured for earlier stages.
 

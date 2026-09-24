@@ -53,7 +53,7 @@ This document uses three practical categories:
 
 ```python
 sfm.Move(..., space="World")
-````
+```
 
 writes the supplied position as an absolute-world destination.
 
