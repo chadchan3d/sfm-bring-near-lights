@@ -25,17 +25,13 @@ In particular, this repository does not relicense:
 - Python, PySide, Qt, SWIG, or other third-party software;
 - third-party models, maps, characters, lights, rigs, textures, or other assets;
 - third-party excerpts, contributions, or source material that may be referenced but is not included; or
-- private development evidence excluded from the repository.
+- unpublished internal development material.
 
 Names and API identifiers are used only to identify the environment with which the project interoperates.
 
-## Private evidence
+## Unpublished material
 
-The public repository does not include the private development-evidence archive.
-
-Excluded private material includes raw runtime logs, screenshots, intermediate scripts, internal audits, local machine paths, machine or account identifiers, private correspondence, and the complete development handoff archive.
-
-Public documentation contains sanitized factual conclusions distilled from that evidence. Excluding the underlying private files does not change their ownership or license status.
+Internal development material that is not included in this repository is not covered by this repository publication unless it is separately released under stated terms.
 
 ## CC0 legal text
 
