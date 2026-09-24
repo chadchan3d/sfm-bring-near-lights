@@ -2,7 +2,7 @@
 
 SFM Bring Near: Lights was developed and released before this Git repository existed.
 
-This document preserves a public-safe chronology reconstructed from surviving project source, cumulative test ledgers, runtime evidence, audits, release packages, and the reconciled development handoff.
+This document preserves a public-safe chronology supported by surviving project source, test records, runtime evidence, audits, and release artifacts.
 
 The T-series stages described below:
 
@@ -112,9 +112,7 @@ No retrospective Git commit has been created for this release.
 
 Version 1.0.1 added UI polish and spacing improvements.
 
-A surviving v1.0.1 archive was retained in the private development handoff. Its exact production source became the visual and UI base from which the final Light Kit-compatible source was rebuilt.
-
-The private v1.0.1 archive is historical evidence and is not part of this public repository.
+A surviving v1.0.1 archive provided the visual and UI base from which the final Light Kit-compatible source was rebuilt. The archive itself is not part of this public repository.
 
 ## Light Kit discovery
 
@@ -212,7 +210,6 @@ The four hidden members were collapsed into one visible row named `Light Kit`.
 
 The first integration produced a false-positive safety rejection. Ordinary-light child rules had been applied to the kit root even though that root’s purpose is to carry its internal lights.
 
-A preserved screenshot demonstrates the false-positive UI result, but the screenshot remains private.
 
 ## T52 — separate root-safety semantics
 
@@ -226,7 +223,6 @@ Runtime feedback indicated that:
 - the kit appeared as one chooser row; and
 - independent ordinary lights in the same shot remained available as ordinary rows.
 
-The detailed runtime material remains private.
 
 ## T53 — safety hardening and release presentation
 
@@ -249,7 +245,7 @@ No part of its visual regression should be revived merely because its stage numb
 
 ## T55 — final v1.0.2 production source
 
-T55 rebuilt the qualified Light Kit work on the exact surviving v1.0.1 visual and UI base.
+T55 rebuilt the Light Kit work on the exact surviving v1.0.1 visual and UI base.
 
 It retained:
 
@@ -261,9 +257,8 @@ It retained:
 - final author and CC0 presentation; and
 - the released chooser wording.
 
-The development handoff was assembled while its narrative still conservatively described T55 as a candidate awaiting final release designation.
 
-The authoritative surviving v1.0.2 ZIP contains the exact T55-qualified production source. During publication preparation, that ZIP was designated as the surviving v1.0.2 production and release payload.
+The authoritative v1.0.2 ZIP contains production source reconciled byte-for-byte to T55 and published as the v1.0.2 release payload.
 
 The source SHA-256 is:
 
@@ -285,20 +280,4 @@ Publication documentation, the complete CC0 legal text, validation tooling, and 
 
 ## Evidence boundary
 
-The private development handoff contains the historical ledger, selected intermediate sources, runtime logs, screenshots, audits, comparisons, and a manifest.
-
-All 23 files declared by that handoff manifest were independently hash-verified during reconciliation.
-
-The private handoff supports this chronology but is not itself a public release artifact.
-
-The following remain excluded unless separately reviewed and approved:
-
-- raw runtime logs;
-- screenshots;
-- intermediate source files;
-- internal audits;
-- machine-local paths;
-- machine or account identifiers; and
-- the complete development handoff archive.
-
-This public document preserves sanitized conclusions and known limitations without exposing the private evidence package.
+Raw development evidence is intentionally excluded from the public repository. This document retains the supported conclusions and known limitations needed to understand the pre-Git chronology without publishing internal working material.

@@ -4,7 +4,7 @@ Bring Near is a Source Filmmaker Animation Set utility that moves selected exist
 
 The chosen model remains fixed. Bring Near moves only the lights the artist approves and leaves uncertain transform relationships unavailable.
 
-Version 1.0.2 also recognizes SFM’s native Light Kit as one complete lighting setup and centers its authored focus root on the chosen model.
+Version 1.0.2 also recognizes SFM’s native Light Kit as one complete lighting setup. On supported character models, Bring Near centers the kit’s authored focus on the torso while preserving the preset arrangement.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Version 1.0.2 also recognizes SFM’s native Light Kit as one complete lighting 
 
    ```text
    SourceFilmmaker\game\
-````
+   ```
 
 3. Restart Source Filmmaker.
 
@@ -60,11 +60,15 @@ Bring Near does not create lights and does not attempt to finish the lighting se
 
 ## Native Light Kits
 
-Version 1.0.2 recognizes the supported native SFM Light Kit structure as one chooser item.
+Version 1.0.2 recognizes the supported native SFM Light Kit structure as one chooser item:
 
-When eligible, Bring Near moves the complete setup by translating its shared authored root. It does not attempt to manipulate the hidden member lights independently.
+**Light Kit — Whole kit centered on model**
 
-A Light Kit remains unavailable when its expected structure, placement reference, or relationship safety cannot be established.
+Light Kit placement is available only when Bring Near can establish the character’s body reference; bounds-only props do not qualify for whole-kit placement.
+
+When eligible, Bring Near translates the kit’s shared authored root to the character’s torso center while preserving the preset arrangement. It does not manipulate the hidden member lights independently.
+
+A Light Kit remains unavailable when its expected structure or relationship safety cannot be established.
 
 ## Safety behavior
 
@@ -72,8 +76,8 @@ Before writing, Bring Near:
 
 - resolves the current shot;
 - validates the deliberately invoked anchor;
-- inventories projected lights in the shot;
-- maps each light to its exact animation set and transform control;
+- inventories projected lights and supported native Light Kits in the shot;
+- maps movable targets to their exact animation sets and transform controls;
 - applies bounded parent and relationship checks;
 - builds the complete movement plan;
 - revalidates the document, shot, anchor, and target identities after the chooser closes; and
@@ -88,9 +92,9 @@ The tool fails closed when required identity, transform, reference, or relations
 Bring Near is intentionally narrow:
 
 - current shot only;
-- existing projected lights only;
+- existing projected lights, plus the supported native SFM Light Kit;
 - model or prop remains the fixed anchor;
-- lights move;
+- ordinary lights move independently; the supported Light Kit moves as one complete setup;
 - no camera workflow;
 - no Master or Normalizer dependency;
 - no offline model database or scanner dependency;
@@ -111,9 +115,9 @@ Bring Near targets Source Filmmaker’s bundled Python 2.7.5 environment, PySide
 - `LICENSE` — complete CC0 1.0 Universal legal text.
 - `LICENSE_SCOPE.md` — scope of the CC0 dedication and third-party exclusions.
 - `docs/DEVELOPMENT_HISTORY.md` — public-safe pre-Git development chronology.
-- `docs/ENGINEERING_NOTES.md` — qualified architecture and implementation contract.
-- `docs/RELEASE_PROVENANCE.md` — release payload identity and provenance.
-- `docs/RELEASE_CHECKLIST.md` — validation and release checks.
+- `docs/ENGINEERING_NOTES.md` — architecture and implementation contract.
+- `docs/RELEASE_PROVENANCE.md` — published release identity and provenance.
+- `docs/RELEASE_CHECKLIST.md` — v1.0.2 release verification record.
 - `tools/validate_release.ps1` — validates the original release ZIP against the tracked payload.
 
 ## Development history
@@ -132,7 +136,7 @@ See [`docs/DEVELOPMENT_HISTORY.md`](docs/DEVELOPMENT_HISTORY.md).
 
 ## Release provenance
 
-The authoritative surviving v1.0.2 release asset is:
+The authoritative v1.0.2 release asset is:
 
 ```
 SFM_Bring_Near_Lights_v1_02.zip

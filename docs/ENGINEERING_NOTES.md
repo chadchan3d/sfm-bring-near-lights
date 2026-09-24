@@ -1,6 +1,6 @@
 # Engineering notes
 
-These notes describe the qualified SFM Bring Near: Lights v1.0.2 architecture.
+These notes describe the SFM Bring Near: Lights v1.0.2 architecture and the runtime evidence that supports it.
 
 They do not define a general-purpose Source Filmmaker transform or animation framework.
 
@@ -14,7 +14,7 @@ The tool:
 
 1. resolves the current document and shot;
 2. validates the invoked anchor;
-3. discovers projected lights in the current shot;
+3. discovers projected lights and the supported native Light Kit in the current shot;
 4. maps each light to its exact animation set and transform control;
 5. applies conservative relationship and placement eligibility rules;
 6. presents the eligible choices;
@@ -219,6 +219,14 @@ SFM’s native Light Kit is not treated as four ordinary lights.
 
 An incomplete, duplicate, or ambiguous structure is unavailable.
 
+### Chooser contract
+
+**Production rule:** A supported native Light Kit appears as one fixed-placement row:
+
+`Light Kit — Whole kit centered on model`
+
+The row deliberately has no placement dropdown, no Light Kit-specific tooltip, and no dedicated Light Kit Help paragraph. The native kit is treated as one prebuilt lighting setup rather than four independently staged lights.
+
 ### Why hidden members are not moved independently
 
 **Observed:** An individual hidden member could translate while refusing the following orientation write.
@@ -288,7 +296,7 @@ This conservatism is intentional. Leaving a light unmoved is preferable to movin
 ## Deliberate V1 limits
 
 - Current shot only.
-- Existing projected lights only.
+- Existing projected lights plus the supported native SFM Light Kit only.
 - No camera movement.
 - No generic root or name guessing.
 - No Master or Normalizer dependency.

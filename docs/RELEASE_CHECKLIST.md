@@ -1,130 +1,78 @@
-# v1.0.2 release checklist
+# v1.0.2 release verification record
 
-## Repository state
+## Published state
 
-- [ ] The initial Git baseline remains unchanged:
+- Repository: `chadchan3d/sfm-bring-near-lights`
+- Visibility: public
+- Default branch: `main`
+- Initial Git baseline: `ece86506001ed05d54cbacb14e57a4f8bf7d90f9`
+- v1.0.2 tag target: `fb62ce6c6736aa247e72a35a98c85b4a748902d0`
+- Annotated tag: `v1.0.2`
+- Tag object: `567d03f0c0bc2eeae013c823f916e2ca4db7539e`
+- Release asset: `SFM_Bring_Near_Lights_v1_02.zip`
+- Release asset SHA-256: `E5940F8BC229CD325AF4AA9EE6E62B8D3CDB87EDA5A2C9087C6F9BD5329162C2`
 
-  ```text
-  ece86506001ed05d54cbacb14e57a4f8bf7d90f9
-````
+The initial baseline remains an ancestor of the published tag target. No retrospective development commits were manufactured.
 
-- The baseline is an ancestor of the proposed v1.0.2 tag target.
-- No retrospective development commits were manufactured.
-- The working tree is clean.
-- `git fsck --full` completes successfully.
-- The intended public branch and tag are the only refs selected for publication.
-- No remote or publication action occurs before separate publication approval.
+Later documentation-only commits on `main` do not change the v1.0.2 tag or release payload.
 
 ## Production payload
 
-- `README.txt` remains unchanged from the authoritative ZIP.
-- `workshop/scripts/sfm/animset/SFM_Bring_Near_Lights.py` remains unchanged from the authoritative ZIP.
-- Production source SHA-256 is:
-  ```
-  7F57BDF58A7273276CC1423E30B4988808276FF05940790025AB3E286D2C0051
-  ```
-- Release README SHA-256 is:
-  ```
-  32ECDA40A5702AC1A93DB20DAD48EAA113E46AF481C733735141846454242BA3
-  ```
+The release payload remains:
 
-## Original release asset
+| Path | SHA-256 |
+| --- | --- |
+| `README.txt` | `32ECDA40A5702AC1A93DB20DAD48EAA113E46AF481C733735141846454242BA3` |
+| `workshop/scripts/sfm/animset/SFM_Bring_Near_Lights.py` | `7F57BDF58A7273276CC1423E30B4988808276FF05940790025AB3E286D2C0051` |
 
-- Filename is:
-  ```
-  SFM_Bring_Near_Lights_v1_02.zip
-  ```
-- Size is:
-  ```
-  29,613 bytes
-  ```
-- SHA-256 is:
-  ```
-  E5940F8BC229CD325AF4AA9EE6E62B8D3CDB87EDA5A2C9087C6F9BD5329162C2
-  ```
-- `tools/validate_release.ps1` reports PASS.
-- No claim of byte-reproducible ZIP generation is made.
+The production source is the final T55 source reconciled onto the v1.0.1 visual/UI base.
 
-## Python validation
+## Runtime evidence represented by the repository
 
-- The exact production source compiles with Python 2.7.5.
-- Compilation is performed from a temporary copy so no `.pyc` file enters the repository.
-- Generic Python compilation is described only as syntax/bytecode validation.
-- Python compilation is not represented as proof of SFM runtime behavior.
+Preserved development evidence supports the documented production mechanics, including:
 
-## SFM runtime validation
+- ordinary projected-light discovery and role suggestions;
+- explicit selection and zero-write cancellation;
+- absolute-world placement with orientation restoration;
+- position, orientation, and parent verification;
+- one-operation native Undo behavior in the tested cases;
+- Key / Fill / Rim side flipping;
+- native Light Kit recognition as one complete setup;
+- whole-kit movement through `lightRoot`;
+- character BODY-based whole-kit placement;
+- hidden-member orientation and parent preservation; and
+- fail-closed handling for unsupported relationships.
 
-The historical evidence qualifies the production mechanics documented in this repository.
-
-If a final installation smoke test is performed, use the exact packaged script and record the result privately.
-
-- Right-clicking a model or prop exposes **Rig > Bring Near...**.
-- The chooser identifies the deliberately invoked model.
-- Ordinary projected lights appear with expected role suggestions.
-- Cancel closes the chooser with zero writes.
-- An approved ordinary light moves to the selected placement.
-- The ordinary light’s orientation is preserved.
-- The ordinary light’s parent identity is preserved.
-- One immediate Ctrl+Z restores the ordinary-light operation.
-- Flip changes only Key, Fill, and Rim lateral sides.
-- A supported native Light Kit appears as one `Light Kit` row.
-- Hidden Light Kit members do not appear as separate ordinary rows.
-- Moving the Light Kit translates the complete setup through `lightRoot`.
-- The Light Kit is centered using a qualified BODY reference.
-- Hidden member orientations and parent identities remain preserved.
-- An independent ordinary light remains separately selectable.
-- Unsupported relationship cases are unavailable rather than moved.
-- No raw machine-local test log is added to the public repository.
+The published source was reconciled to the final T55 production source. This record does not claim a separate post-packaging runtime replay unless such a result is preserved independently.
 
 ## Documentation and license
 
-- `README.md` matches the supported v1.0.2 contract.
+- `README.md` describes the supported v1.0.2 behavior.
 - `LICENSE` contains the complete CC0 1.0 Universal legal text.
 - `LICENSE_SCOPE.md` limits the dedication to material owned and controlled by the author.
 - Third-party software, names, formats, APIs, and assets are not represented as relicensed.
-- `docs/DEVELOPMENT_HISTORY.md` clearly labels the T-series chronology as pre-Git.
-- `docs/RELEASE_PROVENANCE.md` distinguishes the ZIP, Git baseline, later documentation, and private evidence.
-- Documentation does not claim a reproducible ZIP build.
-- Documentation does not claim that excluded raw evidence is public.
+- `docs/DEVELOPMENT_HISTORY.md` identifies the T-series chronology as pre-Git.
+- `docs/RELEASE_PROVENANCE.md` records the published tag, commit, and release asset identities.
 
-## Privacy and publication audit
+## Privacy review
 
-- Every Git object reachable from the proposed public branch and tag has been scanned.
-- Author, committer, and proposed tagger metadata use the approved public identity.
-- Commit messages and tag messages have been scanned.
-- Current tracked files have been scanned.
-- The original release ZIP and its internal entries have been scanned.
-- No raw logs, screenshots, intermediate scripts, internal audits, or private handoff archive are tracked.
-- No private local path or private machine/account identifier is present.
-- No unrelated work or nonprofit identity is present.
-- No credential, token, private key, cookie, webhook secret, or authentication file is present.
-- Scan results are reported as bounded findings, not as a guarantee that no secret could exist.
+A repository review on 2026-09-24 inspected:
 
-## Knowledge transfer
+- both commits reachable from the published v1.0.2 history;
+- current tracked text and source files;
+- commit and annotated-tag metadata; and
+- the two baseline payload files.
 
-- The knowledge package is staged outside the project repository.
-- Only sanitized prose and deliberately selected public-safe evidence are included.
-- Raw logs and screenshots are excluded.
-- Candidate and evidence identifiers are unique and stable.
-- Private evidence is represented only as `private-evidence-exists`.
-- The package contains no absolute local path.
-- The package has been independently privacy-scanned.
-- The package source commit is updated to the final audited publication-preparation commit.
-- Publication state remains `pending` until external publication is verified.
+The review searched for private identity data, unrelated organizational identity, local user-profile paths, phone-like identifiers, credentials, tokens, private-key markers, and credential-like assignments.
 
-## Tag preparation
+No matches were detected within that inspected scope.
 
-- The complete commit sequence since the immutable baseline has been reviewed.
-- The proposed v1.0.2 tag target is the final validated publication-preparation commit.
-- The proposed tag target still contains the exact original production payload.
-- The annotated tag would use the approved public identity.
-- The tag has not been created before the tag-target review.
-- The tag has not been pushed.
+The GitHub release asset digest matches the recorded provenance. The binary release container was not independently re-opened through the repository connector during this review; its two recorded payload files are represented by the audited baseline files.
 
-## External publication
+## Publication result
 
-- A separate publication manifest has been prepared.
-- Destination owner, repository name, visibility, description, refs, tag target, and release asset are explicit.
-- Authentication and destination existence have been checked without exposing credentials.
-- Publication approval has been granted for the exact manifest.
-- No repository creation, push, tag upload, release creation, asset upload, visibility change, or deployment occurs before that approval.
+- The repository is public.
+- `v1.0.2` identifies the intended release state.
+- The v1.0.2 release asset is present with the recorded SHA-256 digest.
+- No history rewrite is indicated by the current privacy findings.
+- Raw development evidence remains outside the public repository.
